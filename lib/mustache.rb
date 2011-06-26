@@ -216,7 +216,7 @@ class Mustache
 
     if const = const_get!(name)
       const
-    elsif File.exists?(file = "#{view_path}/#{file_name}.rb")
+    elsif File.exists?(file = "./#{view_path}/#{file_name}.rb")
       require "#{file}".chomp('.rb')
       const_get!(name) || Mustache
     else
